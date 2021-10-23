@@ -9,6 +9,7 @@ class CustomPage {
 		});
 
 		const page = await browser.newPage();
+
 		const customPage = new CustomPage(page);
 
 		return new Proxy(CustomPage, {
