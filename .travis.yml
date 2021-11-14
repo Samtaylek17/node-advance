@@ -4,9 +4,10 @@ node_js:
 dist: trusty
 services:
   - mongodb
-  - redis
+  - redis-server
 env:
   - NODE_ENV=ci
+  - PORT=3000
 cache:
   directories:
     - node_modules
