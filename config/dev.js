@@ -4,4 +4,6 @@ module.exports = {
 	mongoURI: 'mongodb://localhost:27017/blog_everyone',
 	cookieKey: '123123123',
 	redisUrl: 'redis://127.0.0.1:6379',
+	accessKeyId: process.env.AWS_ACCESS_KEY,
+	secretAccessKey: process.env.AWS_SECRET_KEY,
 };

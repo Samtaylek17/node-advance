@@ -1,9 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
+const dotenv = require('dotenv');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+
+dotenv.config({ path: './.env' });
 
 require('./models/User');
 require('./models/Blog');
@@ -27,6 +30,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/blogRoutes')(app);
+require('./routes/uploadRoutes')(app);
 
 if (['production', 'ci'].includes(process.env.NODE_ENV)) {
 	app.use(express.static('client/build'));
